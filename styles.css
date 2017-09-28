@@ -49,6 +49,17 @@ div.container .left .left-intro svg {
   width: 75%;
 }
 
+div.container .left .left-intro svg .cls-2 {
+  font-family: 'proxima-nova';
+  font-style: italic;
+  font-weight: 900;
+}
+
+div.container .left .left-intro svg .cls-10 {
+  font-family: 'proxima-nova';
+  font-weight: 900;
+}
+
 @media screen and (max-width: 767px) {
   div.container .left {
     height: 30em;
