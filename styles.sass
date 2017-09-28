@@ -3,6 +3,7 @@ $insta: rgb(188, 42, 141)
 $github: rgb(118, 118, 118)
 $navy: #192a46
 $light-green: #92cdaf
+$break-medium: 767px
 	
 body
 	background-color: white
@@ -42,7 +43,9 @@ div.container
       -ms-transform: translateY(-50%)
       transform: translateY(-50%)
       svg
-        width: 50%
+        width: 75%
+    @media screen and (max-width: $break-medium)
+      height: 30em
   .right-intro
     padding: 2em
     background: white

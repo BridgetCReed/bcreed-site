@@ -46,7 +46,13 @@ div.container .left .left-intro {
 }
 
 div.container .left .left-intro svg {
-  width: 50%;
+  width: 75%;
+}
+
+@media screen and (max-width: 767px) {
+  div.container .left {
+    height: 30em;
+  }
 }
 
 div.container .right-intro {
