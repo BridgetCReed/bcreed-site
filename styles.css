@@ -66,6 +66,12 @@ div.container .left .left-intro svg .cls-10 {
   }
 }
 
+@media screen and (max-width: 450px) {
+  div.container .left {
+    height: 20em;
+  }
+}
+
 div.container .right-intro {
   padding: 2em;
   background: white;
