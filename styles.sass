@@ -1,10 +1,9 @@
 $light-grey: #efefef
-$insta: rgb(188, 42, 141)
-$github: rgb(118, 118, 118)
-$navy: #192a46
-$light-green: #92cdaf
 $break-medium: 767px
 $break-small: 450px
+$grad-blue: #4bc0c8
+$grad-purple: #c779d0
+$grad-orange: #feac5e
 	
 body
 	background-color: white
@@ -21,13 +20,13 @@ div.container
     left: 0
     top: 0
     height: 100%
-    background: linear-gradient(270deg, #feac5e, #c779d0, #4bc0c8, #feac5e, #c779d0, #4bc0c8)
+    background: linear-gradient(270deg, $grad-orange, $grad-purple, $grad-blue, $grad-orange, $grad-purple, $grad-blue)
     background-size: 1200% 1200%
-    -webkit-animation: AnimationName 59s ease infinite
-    -moz-animation: AnimationName 59s ease infinite
-    -o-animation: AnimationName 59s ease infinite
-    animation: AnimationName 59s ease infinite
-    @keyframes AnimationName
+    -webkit-animation: movingGradient 59s ease infinite
+    -moz-animation: movingGradient 59s ease infinite
+    -o-animation: movingGradient 59s ease infinite
+    animation: movingGradient 59s ease infinite
+    @keyframes movingGradient
       0%
         background-position: 0% 50%
 
@@ -43,30 +42,81 @@ div.container
       -webkit-transform: translateY(-50%)
       -ms-transform: translateY(-50%)
       transform: translateY(-50%)
-      svg
+      img
         width: 75%
-        .cls-2
-          font-family: 'proxima-nova'
-          font-style: italic
-          font-weight: 900
-        .cls-10
-          font-family: 'proxima-nova'
-          font-weight: 900
     @media screen and (max-width: $break-medium)
-      height: 30em
+      height: 50em
     @media screen and (max-width: $break-small)
-      height: 20em
-  .right-intro
-    padding: 2em
-    background: white
-    overflow-y: scroll
-
-    h1 
-      font-size: 2.5em
-      span
-        font-weight: 900
-        text-transform: uppercase
-
+      height: 25em
+  .right
+    padding: 0px
+    height: 100%
+    .right-intro
+      padding: 2em
+      background: white
+      overflow-y: scroll
+      text-align: left
+      position: relative
+      top: 50%
+      -webkit-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      transform: translateY(-50%)
+      h1 
+        font-size: 2.5em
+        line-height: .75em
+        text-transform: lowercase
+        text-align: center
+        margin-bottom: 40px
+        span
+          font-family: 'Playfair Display', serif
+          text-transform: capitalize
+          font-weight: 900
+          position: relative
+          padding: 1em 0.2em
+          font-size: 1em
+          line-height: 1.5em
+          z-index: 1
+          &::before
+            content: ''
+            position: absolute
+            width: 100%
+            height: .75em
+            left: 0
+            top: 1em
+            z-index: -1
+            background-color: rgba($grad-blue, 0.4)
+      ul
+        padding-left: 0px
+        li
+          font-size: 1.5em
+          margin-top: 0px
+          list-style: none
+          margin-bottom: 20px
+          text-align: left
+          padding-left: 10px
+          border-left: 3px solid $light-grey
+          span
+            font-family: 'Playfair Display', serif
+            text-transform: capitalize
+            font-weight: 900
+            position: relative
+            padding: 1em 0.2em
+            font-size: 1em
+            z-index: 1
+            &::before
+              content: ''
+              position: absolute
+              width: 100%
+              height: .75em
+              left: 0
+              top: 1em
+              z-index: -1
+              background-color: rgba($grad-purple, 0.4)
+    @media screen and (max-width: $break-medium)
+      height: 50em
+      padding: inherit
+    @media screen and (max-width: $break-small)
+      height: 25em
 \:focus
   outline: none
 
@@ -77,9 +127,9 @@ button
   border: 4px solid #192a46
   color: #192a46
   position: relative
-  margin: 2em 3em
+  margin: 1rem 1rem
   padding: 1em 2em
-  font-size: 1.25em
+  font-size: 2rem
   background-color: transparent
   cursor: pointer
   z-index: 1
@@ -101,62 +151,12 @@ button
     left: 0
   &.intro-name
     &::before
-      background-color: rgba($insta, 0.4)
+      background-color: rgba($grad-blue, 0.4)
       transition: all 300ms ease-in-out
       -moz-transition: all 300ms ease-in-out
       -o-transition: all 300ms ease-in-out
       -webkit-transition: all 300ms ease-in-out
       transition: all 300ms ease-in-out
     &:hover:before
-      background-color: rgba($insta, 0.8)
+      background-color: rgba($grad-blue, 0.8)
 		
-  &.github
-    &::before
-      background-color: rgba($github, 0.4)
-      transition: all 300ms ease-in-out
-      -moz-transition: all 300ms ease-in-out
-      -o-transition: all 300ms ease-in-out
-      -webkit-transition: all 300ms ease-in-out
-      transition: all 300ms ease-in-out
-    &:hover:before
-      background-color: rgba($github, 0.8)
-  &.codepen
-    &::before
-      background-color: rgba(146, 205, 175, 0.4)
-      transition: all 300ms ease-in-out
-      -moz-transition: all 300ms ease-in-out
-      -o-transition: all 300ms ease-in-out
-      -webkit-transition: all 300ms ease-in-out
-      transition: all 300ms ease-in-out
-    &:hover:before
-      background-color: rgba(146, 205, 175, 0.8)
-  &.twitter
-    &::before
-      background-color: rgba(0, 172, 237, 0.4)
-      transition: all 300ms ease-in-out
-      -moz-transition: all 300ms ease-in-out
-      -o-transition: all 300ms ease-in-out
-      -webkit-transition: all 300ms ease-in-out
-      transition: all 300ms ease-in-out
-    &:hover:before
-      background-color: rgba(0, 172, 237, 0.8)
-  &.insta
-    &::before
-      background-color: rgba(188, 42, 141, 0.4)
-      transition: all 300ms ease-in-out
-      -moz-transition: all 300ms ease-in-out
-      -o-transition: all 300ms ease-in-out
-      -webkit-transition: all 300ms ease-in-out
-      transition: all 300ms ease-in-out
-    &:hover:before
-      background-color: rgba(188, 42, 141, 0.8)
-  &.gdi-github
-    &::before
-      background-color: rgba(240, 91, 98, 0.4)
-      transition: all 300ms ease-in-out
-      -moz-transition: all 300ms ease-in-out
-      -o-transition: all 300ms ease-in-out
-      -webkit-transition: all 300ms ease-in-out
-      transition: all 300ms ease-in-out
-    &:hover:before
-      background-color: rgba(240, 91, 98, 0.8)

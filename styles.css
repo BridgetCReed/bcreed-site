@@ -18,13 +18,13 @@ div.container .left {
   height: 100%;
   background: linear-gradient(270deg, #feac5e, #c779d0, #4bc0c8, #feac5e, #c779d0, #4bc0c8);
   background-size: 1200% 1200%;
-  -webkit-animation: AnimationName 59s ease infinite;
-  -moz-animation: AnimationName 59s ease infinite;
-  -o-animation: AnimationName 59s ease infinite;
-  animation: AnimationName 59s ease infinite;
+  -webkit-animation: movingGradient 59s ease infinite;
+  -moz-animation: movingGradient 59s ease infinite;
+  -o-animation: movingGradient 59s ease infinite;
+  animation: movingGradient 59s ease infinite;
 }
 
-@keyframes AnimationName {
+@keyframes movingGradient {
   0% {
     background-position: 0% 50%;
   }
@@ -45,46 +45,115 @@ div.container .left .left-intro {
   transform: translateY(-50%);
 }
 
-div.container .left .left-intro svg {
+div.container .left .left-intro img {
   width: 75%;
-}
-
-div.container .left .left-intro svg .cls-2 {
-  font-family: 'proxima-nova';
-  font-style: italic;
-  font-weight: 900;
-}
-
-div.container .left .left-intro svg .cls-10 {
-  font-family: 'proxima-nova';
-  font-weight: 900;
 }
 
 @media screen and (max-width: 767px) {
   div.container .left {
-    height: 30em;
+    height: 50em;
   }
 }
 
 @media screen and (max-width: 450px) {
   div.container .left {
-    height: 20em;
+    height: 25em;
   }
 }
 
-div.container .right-intro {
+div.container .right {
+  padding: 0px;
+  height: 100%;
+}
+
+div.container .right .right-intro {
   padding: 2em;
   background: white;
   overflow-y: scroll;
+  text-align: left;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-div.container .right-intro h1 {
+div.container .right .right-intro h1 {
   font-size: 2.5em;
+  line-height: .75em;
+  text-transform: lowercase;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-div.container .right-intro h1 span {
+div.container .right .right-intro h1 span {
+  font-family: 'Playfair Display', serif;
+  text-transform: capitalize;
   font-weight: 900;
-  text-transform: uppercase;
+  position: relative;
+  padding: 1em 0.2em;
+  font-size: 1em;
+  line-height: 1.5em;
+  z-index: 1;
+}
+
+div.container .right .right-intro h1 span::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: .75em;
+  left: 0;
+  top: 1em;
+  z-index: -1;
+  background-color: rgba(75, 192, 200, 0.4);
+}
+
+div.container .right .right-intro ul {
+  padding-left: 0px;
+}
+
+div.container .right .right-intro ul li {
+  font-size: 1.5em;
+  margin-top: 0px;
+  list-style: none;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 3px solid #efefef;
+}
+
+div.container .right .right-intro ul li span {
+  font-family: 'Playfair Display', serif;
+  text-transform: capitalize;
+  font-weight: 900;
+  position: relative;
+  padding: 1em 0.2em;
+  font-size: 1em;
+  z-index: 1;
+}
+
+div.container .right .right-intro ul li span::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: .75em;
+  left: 0;
+  top: 1em;
+  z-index: -1;
+  background-color: rgba(199, 121, 208, 0.4);
+}
+
+@media screen and (max-width: 767px) {
+  div.container .right {
+    height: 50em;
+    padding: inherit;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  div.container .right {
+    height: 25em;
+  }
 }
 
 :focus {
@@ -98,9 +167,9 @@ button {
   border: 4px solid #192a46;
   color: #192a46;
   position: relative;
-  margin: 2em 3em;
+  margin: 1rem 1rem;
   padding: 1em 2em;
-  font-size: 1.25em;
+  font-size: 2rem;
   background-color: transparent;
   cursor: pointer;
   z-index: 1;
@@ -127,7 +196,7 @@ button:hover::before {
 }
 
 button.intro-name::before {
-  background-color: rgba(188, 42, 141, 0.4);
+  background-color: rgba(75, 192, 200, 0.4);
   transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
@@ -136,72 +205,7 @@ button.intro-name::before {
 }
 
 button.intro-name:hover:before {
-  background-color: rgba(188, 42, 141, 0.8);
-}
-
-button.github::before {
-  background-color: rgba(118, 118, 118, 0.4);
-  transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-button.github:hover:before {
-  background-color: rgba(118, 118, 118, 0.8);
-}
-
-button.codepen::before {
-  background-color: rgba(146, 205, 175, 0.4);
-  transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-button.codepen:hover:before {
-  background-color: rgba(146, 205, 175, 0.8);
-}
-
-button.twitter::before {
-  background-color: rgba(0, 172, 237, 0.4);
-  transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-button.twitter:hover:before {
-  background-color: rgba(0, 172, 237, 0.8);
-}
-
-button.insta::before {
-  background-color: rgba(188, 42, 141, 0.4);
-  transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-button.insta:hover:before {
-  background-color: rgba(188, 42, 141, 0.8);
-}
-
-button.gdi-github::before {
-  background-color: rgba(240, 91, 98, 0.4);
-  transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-button.gdi-github:hover:before {
-  background-color: rgba(240, 91, 98, 0.8);
+  background-color: rgba(75, 192, 200, 0.8);
 }
  
 
