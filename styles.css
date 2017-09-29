@@ -2,6 +2,7 @@ body {
   background-color: white;
   font-family: 'proxima-nova', sans-serif;
   font-weight: 300;
+  font-weight-color: #333333;
 }
 
 div.container {
@@ -43,6 +44,18 @@ div.container .left .left-intro {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 767px) {
+  div.container .left .left-intro {
+    top: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  div.container .left .left-intro {
+    top: 20%;
+  }
 }
 
 div.container .left .left-intro img {
@@ -88,12 +101,12 @@ div.container .right .right-intro h1 {
 
 div.container .right .right-intro h1 span {
   font-family: 'Playfair Display', serif;
-  text-transform: capitalize;
+  text-transform: initial;
   font-weight: 900;
   position: relative;
   padding: 1em 0.2em;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.75em;
   z-index: 1;
 }
 
@@ -108,23 +121,34 @@ div.container .right .right-intro h1 span::before {
   background-color: rgba(75, 192, 200, 0.4);
 }
 
-div.container .right .right-intro ul {
-  padding-left: 0px;
+@media screen and (max-width: 450px) {
+  div.container .right .right-intro {
+    top: 70%;
+  }
 }
 
-div.container .right .right-intro ul li {
-  font-size: 1.5em;
+div.container .right .right-intro ul.contact {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 3px solid #efefef;
+}
+
+div.container .right .right-intro ul.contact li {
+  font-size: 2.25em;
   margin-top: 0px;
   list-style: none;
+  text-transform: lowercase;
   margin-bottom: 20px;
-  text-align: left;
-  padding-left: 10px;
-  border-left: 3px solid #efefef;
+  padding-left: 0px;
+  border-left: none;
+  text-align: center;
+  line-height: 1em;
 }
 
-div.container .right .right-intro ul li span {
+div.container .right .right-intro ul.contact li a {
+  color: #333333;
   font-family: 'Playfair Display', serif;
-  text-transform: capitalize;
+  text-transform: initial;
   font-weight: 900;
   position: relative;
   padding: 1em 0.2em;
@@ -132,7 +156,57 @@ div.container .right .right-intro ul li span {
   z-index: 1;
 }
 
-div.container .right .right-intro ul li span::before {
+div.container .right .right-intro ul.contact li a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: .75em;
+  left: 0;
+  top: 1em;
+  z-index: -1;
+  background-color: rgba(254, 172, 94, 0.4);
+}
+
+div.container .right .right-intro ul.contact li a:hover {
+  text-decoration: none;
+}
+
+div.container .right .right-intro ul.contact li a:hover::before {
+  background-color: rgba(75, 192, 200, 0.4);
+}
+
+div.container .right .right-intro ul.contact li a:focus, div.container .right .right-intro ul.contact li a:active {
+  text-decoration: none;
+}
+
+div.container .right .right-intro ul {
+  padding-left: 0px;
+}
+
+div.container .right .right-intro ul ul {
+  padding-left: 13px;
+}
+
+div.container .right .right-intro ul ul li {
+  margin-left: 23px;
+  border-left: none;
+  list-style-type: square;
+  margin-bottom: 0em;
+  font-size: 1em;
+}
+
+div.container .right .right-intro ul ul li a {
+  color: #333333;
+  font-family: 'Playfair Display', serif;
+  text-transform: initial;
+  font-weight: 900;
+  position: relative;
+  padding: 1em 0.2em;
+  font-size: 1em;
+  z-index: 1;
+}
+
+div.container .right .right-intro ul ul li a::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -141,6 +215,72 @@ div.container .right .right-intro ul li span::before {
   top: 1em;
   z-index: -1;
   background-color: rgba(199, 121, 208, 0.4);
+}
+
+div.container .right .right-intro ul ul li a:hover {
+  text-decoration: none;
+}
+
+div.container .right .right-intro ul ul li a:hover::before {
+  background-color: rgba(75, 192, 200, 0.4);
+}
+
+div.container .right .right-intro ul ul li a:focus, div.container .right .right-intro ul ul li a:active {
+  text-decoration: none;
+}
+
+div.container .right .right-intro ul li {
+  font-size: 1.75em;
+  margin-top: 0px;
+  list-style: none;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 3px solid #efefef;
+}
+
+div.container .right .right-intro ul li.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+
+div.container .right .right-intro ul li span {
+  font-family: 'Playfair Display', serif;
+  text-transform: initial;
+  font-weight: 900;
+}
+
+div.container .right .right-intro ul li a {
+  color: #333333;
+  font-family: 'Playfair Display', serif;
+  text-transform: initial;
+  font-weight: 900;
+  position: relative;
+  padding: 1em 0.2em;
+  font-size: 1em;
+  z-index: 1;
+}
+
+div.container .right .right-intro ul li a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: .75em;
+  left: 0;
+  top: 1em;
+  z-index: -1;
+  background-color: rgba(199, 121, 208, 0.4);
+}
+
+div.container .right .right-intro ul li a:hover {
+  text-decoration: none;
+}
+
+div.container .right .right-intro ul li a:hover::before {
+  background-color: rgba(75, 192, 200, 0.4);
+}
+
+div.container .right .right-intro ul li a:focus, div.container .right .right-intro ul li a:active {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 767px) {
