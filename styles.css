@@ -54,7 +54,7 @@ div.container .left .left-intro {
 
 @media screen and (max-width: 450px) {
   div.container .left .left-intro {
-    top: 20%;
+    top: 35%;
   }
 }
 
@@ -123,7 +123,7 @@ div.container .right .right-intro h1 span::before {
 
 @media screen and (max-width: 450px) {
   div.container .right .right-intro {
-    top: 70%;
+    top: 100%;
   }
 }
 
