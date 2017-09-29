@@ -183,16 +183,14 @@ div.container .right .right-intro ul {
   padding-left: 0px;
 }
 
-div.container .right .right-intro ul ul {
-  padding-left: 13px;
-}
-
 div.container .right .right-intro ul ul li {
-  margin-left: 23px;
   border-left: none;
-  list-style-type: square;
   margin-bottom: 0em;
   font-size: 1em;
+  background: url("sparkles-list.png") no-repeat left center;
+  background-size: contain;
+  height: 1.25em;
+  padding-left: 40px;
 }
 
 div.container .right .right-intro ul ul li a {
