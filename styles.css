@@ -54,12 +54,12 @@ div.container .left .left-intro {
 
 @media screen and (max-width: 450px) {
   div.container .left .left-intro {
-    top: 35%;
+    top: 45%;
   }
 }
 
 div.container .left .left-intro img {
-  width: 75%;
+  width: 90%;
 }
 
 @media screen and (max-width: 767px) {
